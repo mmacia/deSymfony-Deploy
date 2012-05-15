@@ -1,0 +1,8 @@
+digraph g{
+  staging -> dev [label = "copy"]
+  dev -> staging [label = "copy"]
+  staging -> live [label = "copy"]
+  client -> live 
+
+  client [shape = "box", style = "rounded"]
+}

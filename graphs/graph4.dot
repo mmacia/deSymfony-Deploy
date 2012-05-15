@@ -1,0 +1,14 @@
+digraph g{
+  repository -> dev0
+  dev0 -> repository
+  repository -> dev1
+  dev1 -> repository
+  repository -> build [label = "pull / checkout"]
+  build -> staging [label = "deploy"]
+  build -> live  [label = "deploy"]
+  client -> staging 
+
+  client [shape = "box", style = "rounded"]
+  repository [label = "Git repositories", shape = "none", image = "img/cloud-md.png"]
+  build [label = "", shape = "none", image = "img/factory.png"]
+}
