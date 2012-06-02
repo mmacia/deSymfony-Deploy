@@ -1,0 +1,7 @@
+web/bundles
+deps.lock
+app/logs/*
+app/cache/*
+app/bootstrap.php.cache
+app/config/parameters.ini
+vendor/*
