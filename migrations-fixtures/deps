@@ -38,6 +38,9 @@
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
     version=origin/2.0
 
+[faker]
+    git=https://github.com/fzaninotto/Faker.git
+
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
     version=v4.1.7

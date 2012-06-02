@@ -13,6 +13,7 @@ $loader->registerNamespaces(array(
     'Doctrine\\DBAL'   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine\\DBAL\\Migrations' => __DIR__.'/../vendor/doctrine-migrations/lib',
     'Doctrine'         => __DIR__.'/../vendor/doctrine/lib',
+    'Faker'            => __DIR__.'/../vendor/faker/src',
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
