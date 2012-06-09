@@ -1,0 +1,21 @@
+users:
+  -
+    name:  Moisés Maciá
+    email: mmacia@gmail.com
+    phone:  666554433
+
+  -
+    name: Pepe
+    email: pepe@gmail.com
+    phone: 666334455
+
+  -
+    name: Juan
+    email: juan@gmail.com
+    phone: 999887766
+
+  -
+    name: Andres
+    email: andres@gmail.com
+    phone:
+

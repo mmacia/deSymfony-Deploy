@@ -31,7 +31,7 @@ class User
     protected $email;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $phone;
 
@@ -103,5 +103,17 @@ class User
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * Convenient method to set properties
+     *
+     * @param array $data
+     */
+    public function fromArray(array $data)
+    {
+        foreach ($data as $key => $value) {
+            $this->{'set'.ucfirst($key)}($value);
+        }
     }
 }
