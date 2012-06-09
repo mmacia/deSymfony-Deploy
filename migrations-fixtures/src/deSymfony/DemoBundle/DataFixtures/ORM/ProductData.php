@@ -26,6 +26,8 @@ class ProductData extends AbstractFixture implements OrderedFixtureInterface
         $faker = \Faker\Factory::create();
         $faker->addProvider(new MyProvider($faker));
 
+        $comments = $em->getRepository('deSymfonyDemoBundle:Comment')->findAll();
+
         for ($i = 0; $i < 100; $i++) {
             $p = new Product();
 
@@ -35,6 +37,17 @@ class ProductData extends AbstractFixture implements OrderedFixtureInterface
                 'price'       => $faker->decimal,
                 'rating'      => $faker->rate,
             ));
+
+            $maxComments = rand(0, 3);
+
+            for ($j = 0; $j < $maxComments; $j++) {
+                $idx = rand(0, count($comments)-1);
+
+                $p->addComment($comments[$idx]);
+
+                unset($comments[$idx]);
+                $comments = array_values($comments);
+            }
 
             $em->persist($p);
         }

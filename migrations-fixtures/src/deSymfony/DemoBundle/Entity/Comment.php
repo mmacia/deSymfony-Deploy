@@ -103,4 +103,16 @@ class Comment
     {
         return $this->author;
     }
+
+    /**
+     * Convenient method to set properties
+     *
+     * @param array $data
+     */
+    public function fromArray(array $data)
+    {
+        foreach ($data as $key => $value) {
+            $this->{'set'.ucfirst($key)}($value);
+        }
+    }
 }
