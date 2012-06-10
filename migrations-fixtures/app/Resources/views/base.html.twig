@@ -5,6 +5,14 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
+        {# css styles #}
+        {% stylesheets
+          '@deSymfonyDemoBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+        %}
+          <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
     </head>
     <body>
         {% block body %}{% endblock %}
