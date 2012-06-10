@@ -81,3 +81,11 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
+
+[doctrine-extensions]
+  git=http://github.com/beberlei/DoctrineExtensions.git
+  version=2ec3f66cbe2d443f9b0db67e7cff755f9ac6ffb7
+
+[IdeupSimplePaginator]
+  git=https://github.com/javiacei/IdeupSimplePaginatorBundle.git
+  target=/bundles/Ideup/SimplePaginatorBundle
