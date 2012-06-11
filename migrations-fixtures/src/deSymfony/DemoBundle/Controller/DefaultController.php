@@ -14,7 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      * @Template()
      *
      * @return Response
@@ -27,6 +27,7 @@ class DefaultController extends Controller
         $repo = $em->getRepository('deSymfonyDemoBundle:Product');
         $products = $repo->findAll();
 
+        $paginator->setItemsPerPage(12);
         $products = $paginator->paginate($products)->getResult();
 
         return array(
@@ -36,17 +37,17 @@ class DefaultController extends Controller
     }
 
     /**
-     * @param integer $productId
+     * @param integer $id
      *
-     * @Route("/product/show/{id}")
+     * @Route("/product/show/{id}", name="product")
      * @Template()
      *
      * @return Response
      */
-    public function productAction($productId)
+    public function productAction($id)
     {
         $em = $this->get('doctrine')->getEntityManager();
-        $repo = $em->getRepository('deSymfonyDemoBundle:Product')->findOneById($productId);
+        $product = $em->getRepository('deSymfonyDemoBundle:Product')->findOneById($id);
 
         return array('product' => $product);
     }

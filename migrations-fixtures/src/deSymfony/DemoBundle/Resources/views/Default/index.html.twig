@@ -1,1 +1,24 @@
-Hello {{ name }}!
+{% extends "::base.html.twig" %}
+
+{% block body %}
+  <h1>Products</h1>
+
+  <div class="row">
+    {% for product in products %}
+      <div class="span3" style="text-align:center; margin-bottom:30px;">
+        <div class="thumbnail"><img src="/bundles/desymfonydemo/images/tv.jpg" alt="{{ product.name }}" /></div>
+
+        <a href="{{ path('product', { id: product.id }) }}">
+          <strong>{{ product.name }}</strong>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if paginator.currentPage < paginator.lastPage %}
+      <div class="paginator">
+        <a href="{{ path('index', {'page': paginator.nextPage}) }}">more products &raquo;</a>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

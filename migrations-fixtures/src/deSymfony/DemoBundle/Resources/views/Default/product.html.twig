@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+  <div class="row">
+    <div class="thumbnail span4">
+      <img src="/bundles/desymfonydemo/images/tv.jpg" alt="{{ product.name }}" />
+    </div>
+    <div class="span6">
+      <h2>{{ product.name }} (
+        {% for star in range(0, product.rating) %}
+          <img src="/bundles/desymfonydemo/images/star.gif" />
+        {% endfor %})</h2>
+
+      <h2>{{ product.price }}&euro;</h2>
+
+      <h2>Description:</h2>
+      <p>{{ product.description }}</p>
+    </div>
+
+    <br style="clear:both;" />
+
+    <div class="row">
+      <h2>Comments</h2>
+
+      <ul class="span8">
+        {% for comment in product.comments %}
+          <li>
+            <p>{{ comment.author.name }} on {{ comment.createdAt | date("Y-m-d H:i") }} said:</p>
+            <blockquote>{{ comment.comment }}</blockquote>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

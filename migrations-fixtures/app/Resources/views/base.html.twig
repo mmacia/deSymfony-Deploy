@@ -9,13 +9,18 @@
         {# css styles #}
         {% stylesheets
           '@deSymfonyDemoBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+          '@deSymfonyDemoBundle/Resources/public/css/*.css'
         %}
           <link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
         {% endstylesheets %}
 
     </head>
     <body>
+
+      <div class="container">
         {% block body %}{% endblock %}
+      </div>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
