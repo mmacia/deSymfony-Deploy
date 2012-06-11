@@ -32,7 +32,7 @@ class ProductData extends AbstractFixture implements OrderedFixtureInterface
             $p = new Product();
 
             $p->fromArray(array(
-                'name'        => $faker->sentence(3),
+                'name'        => $faker->product,
                 'description' => $faker->paragraph,
                 'price'       => $faker->decimal,
                 'rating'      => $faker->rate,
