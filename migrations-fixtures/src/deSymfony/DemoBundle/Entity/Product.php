@@ -35,7 +35,7 @@ class Product
     protected $description;
 
     /**
-     * @ORM\Column(type="decimal")
+     * @ORM\Column(type="decimal", precision=6, scale=2)
      */
     protected $price;
 
