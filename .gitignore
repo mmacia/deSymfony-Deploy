@@ -1,1 +1,10 @@
 graphs/out/*
+web/bundles
+deps.lock
+app/logs/*
+app/cache/*
+app/bootstrap.php.cache
+app/config/parameters.ini
+vendor/*
+web/css/*
+.local.php.vimrc
