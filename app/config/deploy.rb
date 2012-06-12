@@ -21,8 +21,8 @@ role :db,         domain, :primary => true       # This is where Rails migration
 
 set :use_sudo,            false
 set :keep_releases,       3
-set :shared_files,        ["app/app/config/parameters.ini"]
-set :shared_children,     ["app/app/logs", "app/app/uploads"]
+set :shared_files,        ["app/config/parameters.ini"]
+set :shared_children,     [app_path + "/logs", web_path + "/uploads"]
 set :php_bin,             "/usr/bin/php"
 set :update_vendors,      true
 #set :vendors_mode,        "update"
@@ -32,7 +32,7 @@ set :dump_assetic_assets, true
 #-----------------------------------------------------------
 #                   Custom tasks
 #-----------------------------------------------------------
-task :firstdeploy do
+task :parametersini do
     # make task fail if it's not the first deploy    run "[ -d #{deploy_to} ] && exit 1 || echo 'ok'"
 
     # create shared directories
@@ -44,6 +44,7 @@ task :firstdeploy do
 
     database_driver=pdo_mysql
     database_host=localhost
+    database_port=
     database_name=desymfony
     database_user=root
     database_password=
@@ -58,6 +59,6 @@ task :firstdeploy do
     secret=fd368ea6db2b910684cf54722210725b77
 EOF
 
-    run "mkdir -p #{shared_path}/app/app/config"
-    put ERB.new(template).result(binding), "#{shared_path}/app/app/config/parameters.ini"
+    run "mkdir -p #{shared_path}/app/config"
+    put ERB.new(template).result(binding), "#{shared_path}/app/config/parameters.ini"
 end
