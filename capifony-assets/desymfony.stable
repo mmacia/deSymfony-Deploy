@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+       ServerName desymfony.localhost
+       DocumentRoot "/home/mmacia/deploy/stable/desymfony/migrations-fixtures/web"
+       DirectoryIndex app.php
+       <Directory "/home/mmacia/deploy/stable/desymfony/migrations-fixtures/web">
+         AllowOverride All
+         Allow from All
+         Options +FollowSymLinks +ExecCGI
+       </Directory>
+</VirtualHost>

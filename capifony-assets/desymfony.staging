@@ -1,8 +1,8 @@
 <VirtualHost *:80>
        ServerName desymfony.localhost
-       DocumentRoot "/home/mmacia/workspace/desymfony/migrations-fixtures/web"
+       DocumentRoot "/home/mmacia/deploy/staging/desymfony/migrations-fixtures/web"
        DirectoryIndex app.php
-       <Directory "/home/mmacia/workspace/desymfony/migrations-fixtures/web">
+       <Directory "/home/mmacia/deploy/staging/desymfony/migrations-fixtures/web">
          AllowOverride All
          Allow from All
          Options +FollowSymLinks +ExecCGI
