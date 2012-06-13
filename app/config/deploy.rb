@@ -39,7 +39,7 @@ task :parametersini do
     deploy.setup
 
     # parameters.ini skeleton
-    template = <<-EOF
+    default_template = <<-EOF
 [parameters]
 
     database_driver=pdo_mysql
@@ -58,6 +58,9 @@ task :parametersini do
 
     secret=fd368ea6db2b910684cf54722210725b77
 EOF
+
+    location = fetch(:template_dir, "app/config/") + "parameters.ini.stable"
+    template = File.file?(location) ? File.read(location) : default_template
 
     run "mkdir -p #{shared_path}/app/config"
     put ERB.new(template).result(binding), "#{shared_path}/app/config/parameters.ini"
