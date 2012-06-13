@@ -1,5 +1,5 @@
 set :application, "deSymfony 2012 despliegue de aplicaciones"
-set :domain,      "192.168.1.104" #"desymfony.debian"
+set :domain,      "192.168.1.119" #"desymfony.debian"
 set :user,        "desarrollo"
 set :deploy_to,   "/home/desarrollo/deploy/stable"
 set :app_path,    "app"
@@ -25,8 +25,8 @@ set :shared_files,        ["app/config/parameters.ini"]
 set :shared_children,     [app_path + "/logs", web_path + "/uploads"]
 set :php_bin,             "/usr/bin/php"
 set :update_vendors,      true
-#set :vendors_mode,        "update"
 set :dump_assetic_assets, true
+default_run_options[:pty] = true
 
 
 #-----------------------------------------------------------
