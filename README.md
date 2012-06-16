@@ -6,7 +6,7 @@ Slides &amp; resources for my talk about deploying Symfony 2.0 in deSymfony 2012
 Slides
 ======
 
-[Watch it online at Google Docs](...)
+[Watch it online at Google Docs](https://docs.google.com/presentation/d/1dcTzKIEmVi-G-re2XJ9A84uNkrVYM0UR9HQWt0GaPnI/edit)
 
 Resources
 =========
